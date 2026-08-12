@@ -1,14 +1,17 @@
-.small-text{
+.small-text {
     font-size: 0.7rem;
 }
 
-.footer-bar{
-    position: static;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+.footer-bar {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 10px 0;
+}
+
+.footer-bar p {
+    display: flex;
+    justify-content: space-between; /* Pushes text to opposite sides */
+    align-items: center;
+    margin: 0;
+    padding: 0 20px; /* Leaves room on the screen edges */
 }
