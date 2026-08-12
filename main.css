@@ -10,8 +10,14 @@
 
 .footer-bar p {
     display: flex;
-    justify-content: space-between; /* Pushes text to opposite sides */
+    justify-content: space-between; 
     align-items: center;
     margin: 0;
-    padding: 0 20px; /* Leaves room on the screen edges */
+    padding: 0 20px; 
+}
+ body {
+    background-color: #dad1d1; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(245, 1, 1, 0.1);  
 }
