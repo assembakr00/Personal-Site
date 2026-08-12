@@ -10,4 +10,4 @@
 
 ### The Live Link
 
-- https://assembakr00.github.io/Personal-Site/
+- https://assembakr00.github.io/Personal-Site
