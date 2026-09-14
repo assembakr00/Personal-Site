@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #4deeea;
-    --secondary-color: #b8f24a;
-    --background-color: #101820;
-    --text: #e8f0f2;
-    --accent: #b8f24a;
-    --accent-hover: #ff6b6b;
+    --dark-primary-color: #4deeea;
+    --dark-secondary-color: #b8f24a;
+    --dark-background-color: #101820;
+    --dark-text: #e8f0f2;
+    --dark-accent: #b8f24a;
+    --dark-accent-hover: #ff6b6b;
 
     --light-primary-color: #4deeea;
     --light-secondary-color: #b8f24a;
@@ -14,7 +14,7 @@
     --light-accent-hover: #b15f5f;
 
     --footer-background-color: #333;
-    --footer-Text: #e8f0f2;
+    --footer-text: #e8f0f2;
 }
 
 
@@ -145,4 +145,24 @@ a:focus-visible {
         --accent: var(--light-accent);
         --accent-hover: var(--light-accent-hover);
     }
+}
+
+
+
+html[data-theme="light"] {
+    --primary-color: var(--light-primary-color);
+    --secondary-color: var(--light-secondary-color);
+    --background-color: var(--light-background-color);
+    --text: var(--light-text);
+    --accent: var(--light-accent);
+    --accent-hover: var(--light-accent-hover);
+}
+
+html[data-theme="dark"] {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --background-color: var(--dark-background-color);
+    --text: var(--dark-text);
+    --accent: var(--dark-accent);
+    --accent-hover: var(--dark-accent-hover);
 }
