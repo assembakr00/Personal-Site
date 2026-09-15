@@ -13,6 +13,8 @@
     --light-accent: #b8f24a;
     --light-accent-hover: #b15f5f;
 
+    --menu-background-color: #000000;
+
     --footer-background-color: #333;
     --footer-text: #e8f0f2;
 }
@@ -84,10 +86,11 @@ hr {
 
 nav > :is(ul, ol) {
     padding: 0;
-    list-style: none;
+    list-style: coulumn;
     display: flex;
     gap: 17px;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 
@@ -112,6 +115,55 @@ a:focus-visible {
 }
 
 .theme-button:hover {
+    background-color: var(--accent-hover);
+}
+
+
+
+.side-menu {
+    background-color: var(--menu-background-color);
+    color: var(--text);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    left: 0;
+    z-index: 10;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+
+.menu-button {
+    background-color: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: var(--accent-hover);
+}
+
+
+.menu-close {
+    background-color: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-close:hover {
     background-color: var(--accent-hover);
 }
 
