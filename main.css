@@ -3,15 +3,22 @@
     --dark-secondary-color: #b8f24a;
     --dark-background-color: #101820;
     --dark-text: #e8f0f2;
+    --dark-muted-text: #a9b7bb;
+    --dark-surface-color: #18252d;
+    --dark-border-color: #35515b;
     --dark-accent: #b8f24a;
     --dark-accent-hover: #ff6b6b;
 
-    --light-primary-color: #4cd1cf;
-    --light-secondary-color: #b8f24a;
-    --light-background-color: #f0f0f0;
-    --light-text: #101820;
-    --light-accent: #b8f24a;
-    --light-accent-hover: #b15f5f;
+
+    --light-background-color: #ebe7df;
+    --light-text: #202124;
+    --light-muted-text: #68645e;
+    --light-surface-color: #fffdf8;
+    --light-border-color: #ded6c9;
+    --light-primary-color: #c44536;
+    --light-secondary-color: #d97732; 
+    --light-accent: #c44536;
+    --light-accent-hover: #8f2f27;
 
     --menu-background-color: #000000;
 
@@ -74,6 +81,43 @@
 
 section {
     margin: 48px 0;
+}
+
+
+.experience-grid,
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.experience-card,
+.project-item {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 18px;
+    background-color: var(--surface-color);
+}
+
+.experience-card h3,
+.project-item h4 {
+    margin-top: 0;
+}
+
+.experience-card p,
+.project-item p {
+    margin-bottom: 16px;
+}
+
+.muted-text,
+.small-text {
+    color: var(--muted-text);
+}
+
+.project-link {
+    display: inline-block;
+    margin: 4px 12px 4px 0;
 }
 
 
@@ -200,6 +244,9 @@ a:focus-visible {
         --secondary-color: var(--light-secondary-color);
         --background-color: var(--light-background-color);
         --text: var(--light-text);
+        --muted-text: var(--light-muted-text);
+        --surface-color: var(--light-surface-color);
+        --border-color: var(--light-border-color);
         --accent: var(--light-accent);
         --accent-hover: var(--light-accent-hover);
     }
@@ -212,6 +259,9 @@ html[data-theme="light"] {
     --secondary-color: var(--light-secondary-color);
     --background-color: var(--light-background-color);
     --text: var(--light-text);
+    --muted-text: var(--light-muted-text);
+    --surface-color: var(--light-surface-color);
+    --border-color: var(--light-border-color);
     --accent: var(--light-accent);
     --accent-hover: var(--light-accent-hover);
 }
@@ -221,6 +271,9 @@ html[data-theme="dark"] {
     --secondary-color: var(--dark-secondary-color);
     --background-color: var(--dark-background-color);
     --text: var(--dark-text);
+    --muted-text: var(--dark-muted-text);
+    --surface-color: var(--dark-surface-color);
+    --border-color: var(--dark-border-color);
     --accent: var(--dark-accent);
     --accent-hover: var(--dark-accent-hover);
 }
