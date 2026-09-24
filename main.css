@@ -6,6 +6,10 @@
     --dark-muted-text: #a9b7bb;
     --dark-surface-color: #18252d;
     --dark-border-color: #35515b;
+    --dark-menu-background: #18252d;
+    --dark-button-background: #24343a;
+    --dark-button-border: #4deeea;
+    --dark-button-hover: #1d7375;
     --dark-accent: #b8f24a;
     --dark-accent-hover: #ff6b6b;
 
@@ -15,6 +19,10 @@
     --light-muted-text: #68645e;
     --light-surface-color: #fffdf8;
     --light-border-color: #ded6c9;
+    --light-menu-background: #fffdf8;
+    --light-button-background: #d8cfc4;
+    --light-button-border: #b23a32;
+    --light-button-hover: #b23a32;
     --light-primary-color: #c44536;
     --light-secondary-color: #d97732; 
     --light-accent: #c44536;
@@ -79,6 +87,43 @@
 }
 
 
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 2px solid var(--button-border);
+    border-radius: 7px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.account-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0 12px;
+}
+
+.account-links .icon-link {
+    justify-content: center;
+}
+
+.icon-link:hover {
+    background-color: var(--button-hover);
+    color: var(--button-hover-text);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.icon-link i {
+    font-size: 1.2em;
+}
+
+
 section {
     margin: 48px 0;
 }
@@ -110,9 +155,15 @@ section {
     margin-bottom: 16px;
 }
 
-.muted-text,
-.small-text {
+.muted-text {
     color: var(--muted-text);
+}
+
+.small-text {
+    display: inline-block;
+    color: var(--muted-text);
+    font-size: clamp(0.6rem, 0.7em, 0.8rem);
+    line-height: 1.2;
 }
 
 .project-link {
@@ -138,9 +189,18 @@ nav > :is(ul, ol) {
 }
 
 
-.small-text {
-    font-size: 0.7rem;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
+
 a:focus-visible {
     outline: 3px solid var(--accent-hover);
     outline-offset: 2px;
@@ -155,7 +215,8 @@ a:focus-visible {
     background-color: var(--accent);
     color: var(--text);
     border: none;
-    padding: 8px 12px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -168,10 +229,13 @@ a:focus-visible {
 
 
 .side-menu {
-    background-color: var(--menu-background-color);
-    color: var(--text);
-    width: 250px;
+    background-color: var(--menu-background);
+    color: var(--menu-text);
+    width: min(320px, 88vw);
     height: 100vh;
+    box-sizing: border-box;
+    padding: 22px 16px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.22);
     position: fixed;
     top: 0;
     transform: translateX(-100%);
@@ -184,6 +248,47 @@ a:focus-visible {
     transform: translateX(0);
 }
 
+.side-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 20px;
+    border-bottom: 1px solid var(--menu-border);
+    color: var(--menu-text);
+    font-size: 1.1rem;
+}
+
+.side-menu ul {
+    display: grid;
+    gap: 6px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.side-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 6px;
+    color: var(--menu-text);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.side-menu li a i {
+    width: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.side-menu li a:hover {
+    background-color: var(--menu-hover);
+    color: var(--accent-hover);
+    transform: translateX(3px);
+}
+
 
 .menu-button {
     top: 14px;
@@ -192,7 +297,8 @@ a:focus-visible {
     background-color: var(--accent);
     color: var(--text);
     border: none;
-    padding: 8px 12px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -204,17 +310,20 @@ a:focus-visible {
 
 
 .menu-close {
-    background-color: var(--accent);
-    color: var(--text);
+    width: 34px;
+    height: 34px;
+    background-color: transparent;
+    color: var(--menu-text);
     border: none;
-    padding: 10px 20px;
+    padding: 0;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .menu-close:hover {
     background-color: var(--accent-hover);
+    color: var(--dark-text);
 }
 
 
@@ -247,8 +356,24 @@ a:focus-visible {
         --muted-text: var(--light-muted-text);
         --surface-color: var(--light-surface-color);
         --border-color: var(--light-border-color);
+        --menu-background: var(--light-menu-background);
+        --menu-text: var(--light-text);
+        --menu-border: var(--light-border-color);
+        --menu-hover: #f0e4d8;
+        --button-background: var(--light-button-background);
+        --button-border: var(--light-button-border);
+        --button-hover: var(--light-button-hover);
+        --button-text: var(--light-text);
+        --button-hover-text: #fffdf8;
         --accent: var(--light-accent);
         --accent-hover: var(--light-accent-hover);
+    }
+}
+
+
+@media (max-width: 520px) {
+    .account-links {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -262,6 +387,15 @@ html[data-theme="light"] {
     --muted-text: var(--light-muted-text);
     --surface-color: var(--light-surface-color);
     --border-color: var(--light-border-color);
+    --menu-background: var(--light-menu-background);
+    --menu-text: var(--light-text);
+    --menu-border: var(--light-border-color);
+    --menu-hover: #f0e4d8;
+    --button-background: var(--light-button-background);
+    --button-border: var(--light-button-border);
+    --button-hover: var(--light-button-hover);
+    --button-text: var(--light-text);
+    --button-hover-text: #fffdf8;
     --accent: var(--light-accent);
     --accent-hover: var(--light-accent-hover);
 }
@@ -274,6 +408,15 @@ html[data-theme="dark"] {
     --muted-text: var(--dark-muted-text);
     --surface-color: var(--dark-surface-color);
     --border-color: var(--dark-border-color);
+    --menu-background: var(--dark-menu-background);
+    --menu-text: var(--dark-text);
+    --menu-border: var(--dark-border-color);
+    --menu-hover: #253a44;
+    --button-background: var(--dark-button-background);
+    --button-border: var(--dark-button-border);
+    --button-hover: var(--dark-button-hover);
+    --button-text: var(--dark-text);
+    --button-hover-text: #e8f0f2;
     --accent: var(--dark-accent);
     --accent-hover: var(--dark-accent-hover);
 }

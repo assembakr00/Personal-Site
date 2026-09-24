@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Personal Site</title>
 </head>
 
@@ -11,26 +12,34 @@
 
 <header class="hero-banner">
 
-    <button class="menu-button" id="menu-toggle" type="button">Menu</button>
+    <button class="menu-button" id="menu-toggle" type="button">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <span class="visually-hidden">Open navigation</span>
+    </button>
 
-    
-    <button class="theme-button" id="theme-toggle" type="button">Toggle Theme</button>
-    
+    <button class="theme-button" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+    </button>
 
     <h1>Welcome</h1>
     <h4>Hi, hallo, salut and ciao to my own site—it's a small corner of the web that's dedicated to me.</h4>
 
     <nav class="side-menu" id="side-menu">
-        <button class="menu-close" id="menu-close" type="button">Close</button>
+        <div class="side-menu-header">
+            <strong>Navigation</strong>
+            <button class="menu-close" id="menu-close" type="button" aria-label="Close navigation">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
         
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#my-skills">My Skills</a></li>
-            <li><a href="#working-on">What I'm working on</a></li>
-            <li><a href="#experience">Hack Club &amp; Game Jams</a></li>
-            <li><a href="#what-i-use">What I Use</a></li>
-            <li><a href="#goals">Long-term Goals</a></li>
-            <li><a href="#accounts">Accounts & Portfolios</a></li>
+            <li><a href="#about"><i class="fa-solid fa-user" aria-hidden="true"></i><span>About</span></a></li>
+            <li><a href="#my-skills"><i class="fa-solid fa-code" aria-hidden="true"></i><span>My Skills</span></a></li>
+            <li><a href="#working-on"><i class="fa-solid fa-hammer" aria-hidden="true"></i><span>What I'm working on</span></a></li>
+            <li><a href="#experience"><i class="fa-solid fa-gamepad" aria-hidden="true"></i><span>Hack Club &amp; Game Jams</span></a></li>
+            <li><a href="#what-i-use"><i class="fa-solid fa-toolbox" aria-hidden="true"></i><span>What I Use</span></a></li>
+            <li><a href="#goals"><i class="fa-solid fa-bullseye" aria-hidden="true"></i><span>Long-term Goals</span></a></li>
+            <li><a href="#accounts"><i class="fa-solid fa-link" aria-hidden="true"></i><span>Accounts &amp; Portfolios</span></a></li>
         </ul>
 
     </nav>
@@ -50,7 +59,7 @@
 
     <h2>WHAT I LIKEEEEE <span class="small-text">(and not like)</span></h2>
     <ul>
-        <li><b>Like:</b> Programming, hackthons, game jams, Eating<span class="small-text">shawarma & BBQ</span>, Reading, Learning, Sleeping, Sparring, Kayaking, and a lot more shenanigans.</li>
+        <li><b>Like:</b> Programming, hackthons, game jams, Eating<span class="small-text">(shawarma & BBQ)</span>, Reading, Learning, Sleeping, Sparring, Kayaking, and a lot more shenanigans.</li>
         <li><b>Not Like:</b> Bugs, Errors <span class="small-text">(especially at 3am)</span>, injuries, LARPERS <span class="small-text">(Though am one)</span>, and more.</li>
     </ul>
 </section>
@@ -172,13 +181,26 @@
 <hr>
 
 <section id="accounts">
-    <h3><i>Accounts & Portfolios</i></h3>
-    <ul>
-        <li><a href="https://github.com/assembakr00" target="_blank" rel="noopener noreferrer">assembakr00</a> — Check it out for my GitHub <b>Repositories</b> and <b>Cool shenanigans</b>.</li>
-        <li><a href="https://www.boot.dev/u/heyman1110" target="_blank" rel="noopener noreferrer">heyman1110</a> — Check it out for my <b>Boot.dev Portfolio</b>.</li>
-        <li><a href="https://x.com/AssemBakr00" target="_blank" rel="noopener noreferrer">X (Twitter)</a> — Check it out for my <b>X Account</b>.</li>
-        <li><a href="https://ctrl-z-assem.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a> — Check it out for my <b>itch.io Account</b>.</li>
-    </ul>
+    <h3><i>Accounts &amp; Portfolios</i></h3>
+    <div class="account-links">
+        <a class="icon-link" href="https://github.com/assembakr00" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a class="icon-link" href="https://www.boot.dev/u/heyman1110" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+            <span>Boot.dev</span>
+        </a>
+        <a class="icon-link" href="https://x.com/AssemBakr00" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            <span>X / Twitter</span>
+        </a>
+        <a class="icon-link" href="https://ctrl-z-assem.itch.io/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            <span>itch.io</span>
+        </a>
+    </div>
+    <p class="muted-text">Find my code, learning progress, social updates, and playable game projects across these platforms.</p>
 </section>
 
 <footer class="footer-bar">

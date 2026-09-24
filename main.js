@@ -6,12 +6,11 @@ const htmlElement = document.documentElement;
 
 themebutton.addEventListener("click", () => {
     const currentTheme = htmlElement.getAttribute("data-theme");
+    const nextTheme = currentTheme === "light" ? "dark" : "light";
 
-    if (currentTheme === "light"){
-        htmlElement.setAttribute("data-theme", "dark");
-    } else {
-        htmlElement.setAttribute("data-theme", "light");
-    }
+    htmlElement.setAttribute("data-theme", nextTheme);
+    themebutton.setAttribute("aria-label", `Switch to ${nextTheme === "light" ? "dark" : "light"} theme`);
+    themebutton.querySelector("i").className = nextTheme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon";
 
 });
 
@@ -29,4 +28,16 @@ const closeButton = document.getElementById("menu-close");
 
 closeButton.addEventListener("click", () => {
     sideMenu.classList.remove("open");
+});
+
+sideMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+    });
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        sideMenu.classList.remove("open");
+    }
 });
